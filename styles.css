@@ -89,8 +89,16 @@ form {
   position: relative;
 }
 
+.task-container{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
 .task {
   padding: 10px;
+  text-align: center;
 }
 
 .icon {
