@@ -1,65 +1,57 @@
-( () => {
-    const btnAgregar = document.querySelector("[data-form-btn]"); 
-
-    /* 
-    * es un data atrribute, ayuda para no perder la referencia a un elemento 
-    * si se le cambia la clase en un futuro.
-    */
+import checkComplete from "./components/checkComplete.js";
+import trashCan from "./components/trashCan.js";
 
 
-    const createTask = (evento) => { 
 
-        evento.preventDefault(); // !previene el comportamiento por defecto del formulario, o un objeto en específico (recargar la pagina en este caso)
-        const inputText = document.querySelector("[data-form-input]");
-        const value = inputText.value;
-        inputText.value = "";
-        const list = document.querySelector("[data-list]");
-        const task = document.createElement("li");
-        task.classList.add("card");
+    
+const btnAgregar = document.querySelector("[data-form-btn]"); 
 
-
-        const taskContent = document.createElement("div");
-        taskContent.classList.add("task-container");
-        
-        const titleTask = document.createElement("span");
-        titleTask.classList.add("task");
-        titleTask.innerText = value; // * lo q esta adentro d span lo cambia por value
-        
-        taskContent.appendChild(checkComplete());
-        taskContent.appendChild(titleTask);
-
-    /*
-        * esto se llama string template, es una propieda de JS que permite
-        * guardar un elmento html y poder utilizarlo con variables de JS
-        * como se muestra en la línea 18
-    */
-
-        // task.innerHTML = content;  * lo q esta adentro d task cambia a content.
-        task.appendChild(taskContent)
-        list.appendChild(task);
-    }
+/* 
+* es un data atrribute, ayuda para no perder la referencia a un elemento 
+* si se le cambia la clase en un futuro.
+*/
 
 
-    // ? arrow functions, o funciones anónimas
-    btnAgregar.addEventListener("click",  createTask);
+const createTask = (evento) => { 
 
-    const checkComplete = () => {
-        const i = document.createElement("i");
-        i.classList.add("far", "fa-check-square", "icon");
+    evento.preventDefault(); // !previene el comportamiento por defecto del formulario, o un objeto en específico (recargar la pagina en este caso)
+    const inputText = document.querySelector("[data-form-input]");
+    const value = inputText.value;
+    inputText.value = "";
+    const list = document.querySelector("[data-list]");
+    const task = document.createElement("li");
+    task.classList.add("card");
 
-        i.addEventListener("click", completeTask);
-        return i;
-    }
 
-    const completeTask = (event) => {
-        const element = event.target;
-        element.classList.toggle("fas");
-        element.classlist.toggle("completeIcon");
-        element.classList.toggle("far");
-    }
+    const taskContent = document.createElement("div");
+    taskContent.classList.add("task-container");
+    
+    const titleTask = document.createElement("span");
+    titleTask.classList.add("task");
+    titleTask.innerText = value; // * lo q esta adentro d span lo cambia por value
+    
+    taskContent.appendChild(checkComplete());
+    taskContent.appendChild(titleTask);
 
-})();
+/*
+    * esto se llama string template, es una propieda de JS que permite
+    * guardar un elmento html y poder utilizarlo con variables de JS
+    * como se muestra en la línea 18
+*/
 
+    // task.innerHTML = content;  * lo q esta adentro d task cambia a content.
+    task.appendChild(taskContent)
+    task.appendChild(trashCan());
+    list.appendChild(task);
+}
+
+
+// ? arrow functions, o funciones anónimas
+btnAgregar.addEventListener("click",  createTask);
+
+    
+
+    
 /*
     ! se define todo el codigo como una IIFE (funcion ejecutadas inmediatamente)
     ! se ejecutan cuando son definidas directamente

@@ -85,6 +85,7 @@ form {
   flex-direction: row;
   justify-content: space-between;
   align-content: center;
+  align-items: center;
   margin: 5px 0px;
   position: relative;
 }
