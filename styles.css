@@ -46,7 +46,7 @@ form {
   padding: 10px;
   border: 1px solid #eee;
   outline: none;
-  width: 65%;
+  width: 35%;
 }
 
 .inputForm::placeholder {
@@ -91,7 +91,7 @@ form {
 }
 
 .task-container{
-  width: 100%;
+  width: 60%;
   display: flex;
   align-items: center;
   gap: 1rem;
