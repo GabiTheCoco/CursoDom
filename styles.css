@@ -136,7 +136,7 @@ form {
 }
 
 .date {
-  width: 100%;
-  padding: 15px;
-  
+  width: 95%;
+  padding: 10px;
+  list-style: none;
 }
