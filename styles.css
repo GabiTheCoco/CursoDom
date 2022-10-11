@@ -134,3 +134,9 @@ form {
 .noTasks {
   font-size: 48px;
 }
+
+.date {
+  width: 100%;
+  padding: 15px;
+  
+}

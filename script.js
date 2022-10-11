@@ -1,5 +1,5 @@
 import {addTask} from "./components/addTask.js";
-import { readTask } from "./components/readTasks.js";
+import { displayTask } from "./components/displayTasks.js";
 
     
 const btnAgregar = document.querySelector("[data-form-btn]"); 
@@ -14,7 +14,7 @@ const btnAgregar = document.querySelector("[data-form-btn]");
 // ? arrow functions, o funciones anónimas
 btnAgregar.addEventListener("click",  addTask);
 
-readTask();
+displayTask();
 
     
 /*
